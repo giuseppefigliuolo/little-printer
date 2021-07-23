@@ -127,9 +127,9 @@ gltfLoader.load('/little_printer/scene.gltf', (gltf) => {
     .to(
       model.scale,
       {
-        x: 2,
-        y: 2,
-        z: 2,
+        x: window.innerWidth < 750 ? 1.5 : 2,
+        y: window.innerWidth < 750 ? 1.5 : 2,
+        z: window.innerWidth < 750 ? 1.5 : 2,
         duration: 1.5,
         ease: Power4.easeInOut
       },
