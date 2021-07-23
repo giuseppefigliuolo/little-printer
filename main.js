@@ -4,7 +4,6 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { gsap, Elastic, Power4, Linear } from 'gsap'
-import anime from 'animejs/lib/anime.es.js'
 
 var alphaOne = 1.0
 var alphaTwo = 0.2
@@ -42,7 +41,7 @@ const gltfLoader = new GLTFLoader()
 
 let tl = gsap.timeline()
 
-gltfLoader.load('/assets/little_printer/scene.gltf', (gltf) => {
+gltfLoader.load('/little_printer/scene.gltf', (gltf) => {
   const model = gltf.scene.children[0]
   const paper =
     model.children[0].children[0].children[0].children[0].children[1]
@@ -55,7 +54,7 @@ gltfLoader.load('/assets/little_printer/scene.gltf', (gltf) => {
   const shadowMesh = new THREE.CircleGeometry(3, 128)
 
   const shadowMaterial = new THREE.MeshBasicMaterial({
-    map: loader.load('assets/little_printer/shadow.png'),
+    map: loader.load('/little_printer/shadow.png'),
     depthWrite: false
   })
   shadowMaterial.transparent = true
